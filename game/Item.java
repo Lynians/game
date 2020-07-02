@@ -1,7 +1,5 @@
 package yjla.game;
 
-import java.util.Random;
-
 public class Item {
 	private String mName; // 아이템 이름
 	private int mAmount; // 아이템 수량
@@ -76,15 +74,12 @@ public class Item {
 		this.mDefensePower = mDefensePower;
 	}
 	
-	public Item(String name, int itemCode, long itemGuid, int itemCount, String itemType, String equipmentType) {
+	public Item(String name, int itemCode, long itemGuid, int itemCount) {
 		this.mName = name;
 		this.mAmount = itemCount;
 		this.mItemCode = itemCode;
 		this.mItemGUID = itemGuid;
-		this.mItemType = itemType;
-		if(equipmentType == null)
-			initEquipmentItem(equipmentType);
-		else initUseItem();
+		
 		
 	}
 	private void initEquipmentItem(String equipmentType) {
@@ -102,7 +97,7 @@ public class Item {
 		this.mReinforcementType = null;
 		this.mReinforcementLevel = 0;
 	}
-	public static Item createItem(String name, int itemCode, long itemGuid, int itemCount, String itemType, String equipmentType) {
-		return new Item(name, itemCode, itemGuid, itemCount, itemType, equipmentType);
+	public static Item createItem(String name, int itemCode, long itemGuid, int itemCount) {
+		return new Item(name, itemCode, itemGuid, itemCount);
 	}
 }

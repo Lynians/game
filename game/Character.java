@@ -23,6 +23,7 @@ public class Character {
 		this.mJob = "초보자";
 		this.mItems = new ArrayList<Item>();
 		this.mSkills = new ArrayList<Skill>();
+		this.mItemManager = new ItemManager();
 		this.mAttackPower = 100;
 		this.mDefensePower = 50;
 		this.mHealthPower = 500;
@@ -68,7 +69,7 @@ public class Character {
 		System.out.println("이름\t종류\t수량");
 		System.out.println("--------------------------------------");
 		for(Item itemlist : mItems) {
-			System.out.println(itemlist.getmName() +"\t" + itemlist.getmItemType() +"\t" + itemlist.getmAmount());
+			System.out.println(itemlist.getmName() +"\t" + itemlist.getmAmount());
 		}
 	}
 	
